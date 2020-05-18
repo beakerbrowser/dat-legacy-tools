@@ -2,7 +2,7 @@ const path = require('path')
 const hyperdrive = require('hyperdrive')
 const datStorage = require('./dat-storage')
 const pda = require('pauls-dat-api')
-const mirror = require('mirror-folder')
+const dft = require('diff-file-tree')
 
 var BASE_PATH = undefined
 
@@ -13,12 +13,8 @@ exports.setup = async function ({beakerDataDir}) {
 
 exports.exportFiles = async function (key, targetPath) {
   var archive = await loadArchive(key)
-  await new Promise((resolve, reject) => {
-    mirror({fs: archive, name: '/'}, targetPath, (err) => {
-      if (err) reject(err)
-      else resolve()
-    })
-  })
+  var diff = await dft.diff({fs: archive, name: '/'}, targetPath)
+  await dft.applyRight({fs: archive, name: '/'}, targetPath, diff)
   return pda.readdir(archive, '/', {recursive: true})
 }
 
