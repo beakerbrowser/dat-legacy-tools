@@ -1,6 +1,6 @@
 {
   "name": "@beaker/dat-legacy-tools",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Tools to access legacy dats stored in Beaker",
   "main": "index.js",
   "bin": "bin.js",
