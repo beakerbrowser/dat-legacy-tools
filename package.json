@@ -10,12 +10,17 @@
   "author": "Paul Frazee <pfrazee@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "datland-swarm-defaults": "^1.0.2",
     "diff-file-tree": "^2.3.2",
+    "discovery-swarm": "^6.1.0",
     "hyperdrive": "^9.16.0",
     "pauls-dat-api": "^8.1.0",
     "random-access-file": "^2.0.1",
     "random-access-indexed-file": "^2.0.0",
     "sodium-signatures": "^2.1.1",
     "supports-sparse-files": "^1.0.2"
+  },
+  "devDependencies": {
+    "rimraf": "^3.0.2"
   }
 }

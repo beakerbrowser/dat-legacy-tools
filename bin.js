@@ -28,6 +28,7 @@ async function run () {
   // run export
   await api.setup({beakerDataDir: process.argv[2]})
   await api.exportFiles(process.argv[3], process.argv[4])
+  process.exit(0)
 }
 run()
 
